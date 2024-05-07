@@ -13,37 +13,13 @@ functions:
   user:
     handler: lambdas/user/user.handler
     events:
-      - http:
-          path: user
-          method: GET
-      - http:
-          path: user/{id}
-          method: GET
-      - http:
-          path: user
-          method: POST
-      - http:
-          path: user/{id}
-          method: PUT
-      - http:
-          path: user/{id}
-          method: DELETE
+      - httpApi:
+          path: /user/{proxy+}
+          method: ANY
 
   cart:
     handler: lambdas/cart/cart.handler
     events:
-      - http:
-          path: cart
-          method: GET
-      - http:
-          path: cart/{id}
-          method: GET
-      - http:
-          path: cart
-          method: POST
-      - http:
-          path: cart/{id}
-          method: PUT
-      - http:
-          path: cart/{id}
-          method: DELETE
+      - httpApi:
+          path: /cart/{proxy+}
+          method: ANY
